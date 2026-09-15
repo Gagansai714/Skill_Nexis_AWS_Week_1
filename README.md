@@ -1,68 +1,106 @@
 # ☁️ AWS Cloud Computing Fundamentals & IAM/S3 Architecture
 
-<div align="center">
+> **BeeSkilled – Cloud Computing with AWS | Week 1 Assignment**
+> 🚀 Foundations of Cloud Computing, IAM Security Configurations, and Static Asset Hosting via Amazon S3.
 
 ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![IAM](https://img.shields.io/badge/AWS_IAM-DD344C?style=for-the-badge&logo=amazonaws&logoColor=white)
 ![Amazon S3](https://img.shields.io/badge/Amazon_S3-569A31?style=for-the-badge&logo=amazons3&logoColor=white)
-![Build Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
-
-</div>
-
----
-
-## 📌 Executive Summary
-This repository contains the comprehensive submission for **Week 1: Introduction to Cloud Computing & AWS Basics**. It covers fundamental cloud computing models, account security configurations via **AWS IAM**, core service architectures, and a hands-on deployment of a static web application hosted on **Amazon S3** with custom bucket security policies.
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Documentation](https://img.shields.io/badge/Documentation-Markdown-informational?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ---
 
-## 🚀 Key Learning Outcomes & Technical Highlights
-* **Cloud Architecture Foundations**: Evaluated IaaS, PaaS, SaaS, and deployment models.
-* **Identity & Security (IAM)**: Implemented Least Privilege Principle by isolating root credentials and provisioning dedicated user groups.
-* **Static Asset Hosting**: Configured public read permissions on Amazon S3 via JSON policies to host web assets.
+## 📌 Project Overview
+
+This repository contains the comprehensive submission for **Week 1: Introduction to Cloud Computing & AWS Basics**. It demonstrates core cloud computing models, security governance using **AWS IAM**, key architectural services, and a practical deployment of a static web application hosted on **Amazon S3** utilizing custom bucket security policies.
+
+Instead of basic file storage, this project follows cloud security best practices by isolating root privileges, configuring dedicated IAM user roles, and applying granular JSON access control policies to host public assets securely.
 
 ---
 
-## 📋 Assignment 1: Account & IAM Security Configuration
+## 📚 Table of Contents
 
-* **Root Account Hardening**: Configured AWS Free Tier account with Multi-Factor Authentication (MFA) enabled.
-* **IAM User Provisioning**:
-  * Created user `s3-admin-user` to handle daily infrastructure tasks.
-  * Attached direct access policies (`AmazonS3FullAccess`) to manage object storage securely.
-  * Verified isolation between root access and delegated IAM permissions.
+* 📌 Project Overview
+* 🎯 Project Objectives
+* 📌 Project Status
+* ✨ Key Features
+* 🛠️ Technologies & Tools
+* 📂 Repository Structure
+* 🔐 Assignment 1: Account & IAM Setup
+* 🏛️ Assignment 2: Core AWS Services Report
+* 🛠️ Mini-Project: IAM & S3 Deployment
+* 🖼️ Proof of Work & Screenshots
+* 📊 Repository Information
+* 💡 Skills Demonstrated
+* 🎓 Learning Outcomes
+* 👨‍💻 Author
+* 🙏 Acknowledgement
+* ⭐ Support
 
 ---
 
-## 🏛️ Assignment 2: Core AWS Services Architecture Report
+## 📌 Project Status
 
-| Service | Category | Core Functionality | Practical Use Case |
-| :--- | :--- | :--- | :--- |
-| **Amazon EC2** | Compute | Scalable virtual servers on demand | Hosting web servers, APIs, and scalable compute workloads. |
-| **Amazon S3** | Storage | High-durability object storage | Storing assets, static site hosting, and backup/disaster recovery. |
-| **Amazon RDS** | Database | Managed relational database engine | Handling transactional relational databases (MySQL, PostgreSQL). |
-| **AWS Lambda** | Serverless | Event-driven compute execution | Running microservice functions without managing server infrastructure. |
+✅ AWS Free Tier Account Provisioned
+
+✅ IAM User & Access Roles Configured
+
+✅ Core AWS Services Analysis Completed
+
+✅ S3 General Purpose Bucket Deployed
+
+✅ Public JSON Bucket Policy Applied
+
+✅ Static File Hosted & Verified via S3 URL
+
+✅ Documentation & Screenshots Completed
 
 ---
 
-## 🛠️ Mini-Project Implementation: IAM & S3 Deployment
+## 🎯 Project Objectives
 
-### 1. Bucket Creation & Access Overrides
-Created a General Purpose S3 bucket named `gagan-aws-demo-bucket` with public access restrictions removed to allow custom bucket policy assignment.
+* Master fundamental cloud models (IaaS, PaaS, SaaS) and deployment structures.
+* Secure AWS cloud environments using Identity and Access Management (IAM).
+* Analyze primary AWS compute, storage, database, and serverless services.
+* Provision and configure Amazon S3 buckets for static web asset distribution.
+* Write and apply custom JSON bucket policies for public `s3:GetObject` actions.
+* Build professional project documentation for cloud infrastructure deployment.
 
-### 2. Live JSON Bucket Policy
-Applied the following public read policy to grant `s3:GetObject` access across all objects:
+---
 
-```json
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::gagan-aws-demo-bucket/*"
-    }
-  ]
-}
+## ✨ Key Features
+
+* 🔐 **IAM Security Governance**: Configured dedicated IAM user with specific policy attachments.
+* 🌐 **Static Web Hosting**: Deployed web assets directly to Amazon S3.
+* 📜 **JSON Policy Control**: Configured custom resource access policies for S3 bucket objects.
+* 📑 **Structured Documentation**: Clean markdown organization featuring full deployment proofs.
+
+---
+
+## 🛠️ Technologies & Tools
+
+| Tool / Service | Category | Purpose |
+| :--- | :--- | :--- |
+| **AWS Console** | Cloud Platform | Central management interface for AWS resources |
+| **AWS IAM** | Security & Identity | Access management, user roles, and security policies |
+| **Amazon S3** | Cloud Storage | Object storage and static web file hosting |
+| **HTML5** | Web Development | Static web interface source asset |
+| **JSON** | Configuration | S3 bucket access policy definition |
+| **Git & GitHub** | Version Control | Source code management and submission hosting |
+
+---
+
+## 📂 Repository Structure
+
+```text
+aws-cloud-computing-week1/
+├── index.html            # Static HTML file deployed to Amazon S3
+├── bucket-policy.json    # Public JSON Bucket Policy applied to gagan-aws-demo-bucket
+├── README.md             # Detailed assignment report and proof of work
+└── screenshots/          # Console verification images
+    ├── iam-user-setup.png
+    ├── s3-bucket-objects.png
+    ├── s3-bucket-policy.png
+    └── live-s3-website.png
